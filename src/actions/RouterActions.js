@@ -1,12 +1,10 @@
 import { CHANGE_ROUTE } from '../constants/ActionTypes';
 import { compileHash, parseRoute } from '../utils/RouterUtils';
-import { createBrowserHistory } from "history";
-const history = createBrowserHistory();
 
 const pushState = (route) => {
   const hash = compileHash(route);
   if (window.location.hash !== hash) {
-    history.pushState({ route }, '', hash);
+    window.history.pushState({ route }, '', hash);
   }
 };
 
