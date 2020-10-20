@@ -8,7 +8,6 @@ const history = createBrowserHistory();
 
 const pushState = (route) => {
   const hash = compileHash(route);
-  debugger
   if (window.location.hash !== hash) {
     history.push({ route }, '', hash);
   }
