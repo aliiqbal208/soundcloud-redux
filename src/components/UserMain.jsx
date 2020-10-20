@@ -55,7 +55,7 @@ const UserMain = ({ isFollowing, profiles, toggleFollow, user }) => {
           {profiles.map(({ id, service, title, url }) => (
             <div className="user-main__profile" key={id}>
               <i className={`user-main__profile__icon ${getSocialIcon(service)}`} />
-              <a className="user-main__profile__text" href={url} target="_blank">
+              <a className="user-main__profile__text" rel="noopener noreferrer" href={url} target="_blank">
                 {title || service}
               </a>
             </div>
