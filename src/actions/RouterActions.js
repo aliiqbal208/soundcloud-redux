@@ -1,6 +1,3 @@
-/* global history */
-/* global location */
-/* global window */
 import { CHANGE_ROUTE } from '../constants/ActionTypes';
 import { compileHash, parseRoute } from '../utils/RouterUtils';
 import { createBrowserHistory } from "history";
@@ -9,7 +6,7 @@ const history = createBrowserHistory();
 const pushState = (route) => {
   const hash = compileHash(route);
   if (window.location.hash !== hash) {
-    history.push({ route }, '', hash);
+    history.pushState({ route }, '', hash);
   }
 };
 
